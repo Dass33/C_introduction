@@ -6,10 +6,11 @@ int Secti(int a);
 
 int main()
 {
-	pintf("ahoj");
-}
+    int a = 19968;
+    char * pch;
+    pch=(char*) &a;
+    pch++;
 
-int Secti(int a)
-{
-	return a + 1;	
+	printf("mara je %", a, b);
+	return 0;
 }
