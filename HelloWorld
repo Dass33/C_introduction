@@ -1,0 +1,15 @@
+#include "stdio.h"
+
+int Secti(int a);
+//deklaruje, linker potom da dohromady
+
+
+int main()
+{
+	pintf("ahoj");
+}
+
+int Secti(int a)
+{
+	return a + 1;	
+}
