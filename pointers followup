@@ -1,0 +1,16 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+typedef unsigned char byte;
+#define MOJE_VESELA_KONSTANTA 10
+
+int main() {
+    int a, b;
+
+    a = MOJE_VESELA_KONSTANTA;
+    b = 20;
+
+    printf("%i, %i", a, b);
+
+    return 0;
+}
