@@ -1,0 +1,23 @@
+int main() {
+    char* z;
+
+    z = (char*)malloc(127);
+    //vyallokuje v pameti prislusny pocet bajtu a vrati nam ten prvni
+    //melil by jsme testovat jestli nevrati null 
+
+    z = (char*)calloc(127, sizeof(char));
+    //chci prostor pro 127 charu
+
+
+    strcpy_s(z, "ahoj Mikulasi");
+    //strcpy_s((char*) & z[], "ahoj Mikulasi");
+    //prvni prvek pole je pointer na to pole
+
+    printf("%s", z);
+
+    free(z);
+    //kazdou pamet, kterou alokujeme by jsme meli uvolnit
+    //pokud stratime pointer, tak pameti uz nebudeme moci uvolnit az do vypnuti programu
+
+    return 0;
+}
