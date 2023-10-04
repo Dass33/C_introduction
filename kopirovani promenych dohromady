@@ -22,3 +22,98 @@ int main() {
 
 
 
+#include "pokus.h"
+#include <malloc.h>
+
+//volatile int MojeHodnota;
+//neoptimalizovat compilerem kod, protoze jiny software muze zmenit hodnotu
+//abychom nali promenou v pameti, kde ji ocekavame
+//vetsinou kdyz harware posila promene do pameti automaticky
+
+
+int MojeHodnota;
+
+void Copy(void* Source, void* Dest, int Len)
+{
+	//pointer je vzdy adresa, windows 64 => 64 bitu zabira
+	// int Len, kolik bajtu se ma zkopirovat
+
+	for (int i = 0; i < Len; i++)
+	{
+		//velmi omezeny, test pro uceni
+		*(byte*)Dest = *(byte*)Source;
+		//jsi pointer na byte, vis jaky datatyp cist a kolik zabira
+		Dest = (byte*)Dest + sizeof(byte);
+		Source = (byte*)Source + sizeof(byte);
+		//musime pretypovat a posunout o spravne velke misto v pameti
+	}
+}
+
+int Count(char* s)
+{
+	int lintCount;
+	char lchrZnak;
+
+	lintCount = 0;
+	lchrZnak = *s;
+
+
+	while (lchrZnak != 0)
+	{
+		lchrZnak = *s;
+		s++;
+
+		//pocitani poctu znaku
+		lintCount++;
+
+		//test zda to neni moc dlouhe, mrk mrk
+		if (lintCount > MAX_STRING_LEN)
+		{
+			lintCount = -1; //bylo by lepsi si z toho udelat take konstantu
+			break;
+		}
+	}
+	//vraci delku retezce zmensenou o null
+	return lintCount - 1;
+}
+
+char* Merge(char* x, char* y)
+{
+	int lintSize;
+	char* p_lchTemp, * p_lchrStart;
+
+	//spocitat celkovou delku
+	lintSize = Count(x) + Count(y);
+
+	p_lchrStart = p_lchTemp = (char*)malloc(lintSize);
+
+	Copy(x, p_lchTemp, Count(x));
+
+	p_lchTemp = p_lchTemp + Count(x);
+	Copy(y, p_lchTemp, Count(y));
+
+	p_lchTemp = p_lchTemp + Count(y);
+	*p_lchTemp = '\0';
+	//musime posunout nazpatek 
+
+
+	return p_lchStart;
+}
+
+
+#pragma once
+
+typedef unsigned char byte;
+#define MOJE_VESELA_KONSTANTA 10
+
+//maximalni delka poli charu ktere moje knihovna zpracuje
+#define MAX_STRING_LEN 2048
+
+
+extern int MojeHodnota;
+
+void Copy(void* Source, void* Dest, int Len);
+
+char* Merge(char* x, char* y);
+
+int Count(char* s);
