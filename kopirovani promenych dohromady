@@ -1,0 +1,24 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include "pokus.h"
+#include <string.h>
+#include <malloc.h>
+
+int main() {
+    char a[20], b[30];
+    char* v;
+
+    strcpy_s(a, "ahoj");
+    strcpy_s(b, "Mikulasi");
+
+    v = Merge(a, b);
+    v = Merge(v, v);
+
+    printf("%s", v);
+} 
+
+//dva str, ktere posleme jako argumenty do funkce 
+//ta vyalokuje prostor, tam je da a pak nam vrati pointer na tuto pamet
+
+
+
