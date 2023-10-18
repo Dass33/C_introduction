@@ -1,0 +1,5 @@
+﻿  serazeniPodleAbecedy.cpp
+C:\Users\dvorakdaniel\source\repos\serazeniPodleAbecedy\serazeniPodleAbecedy\serazeniPodleAbecedy.cpp(16,12): warning C4477: printf: Formátovací řetězec %s vyžaduje argument typu char *, ale variadický argument 1 má typ int.
+C:\Users\dvorakdaniel\source\repos\serazeniPodleAbecedy\serazeniPodleAbecedy\serazeniPodleAbecedy.cpp(16,12): warning C4313: printf: %s ve formátovacím řetězci je v konfliktu s argumentem 1 typu int
+C:\Users\dvorakdaniel\source\repos\serazeniPodleAbecedy\serazeniPodleAbecedy\serazeniPodleAbecedy.cpp(33,5): error C2561: serazeniAbeceda: funkce musí vracet hodnotu.
+C:\Users\dvorakdaniel\source\repos\serazeniPodleAbecedy\serazeniPodleAbecedy\serazeniPodleAbecedy.cpp(27,6): message : viz deklarace: serazeniAbeceda
