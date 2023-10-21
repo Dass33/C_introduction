@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h> // Include standard library for calloc
-#include <ctype.h>
+#include <stdlib.h> //include library for calloc
+#include <ctype.h> //include library for tolower()
 
 #define MAX_SIZE 2048
 #define ASCII_Start_Alphabet 96
