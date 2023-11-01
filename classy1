@@ -1,0 +1,17 @@
+class clsMOje
+{
+public: //vse do ukonceni je public
+	int a;
+
+	void fce();
+
+private: //jen moje
+protected:
+}; //neni to funkce takze tam musi byt strednik
+
+
+	void fce()  //jednoduche funkce se pisou do class
+		//nebo online funkce ktere mohou byt rychleji volany
+	{
+		
+	}
