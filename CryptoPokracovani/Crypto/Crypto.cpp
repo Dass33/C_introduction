@@ -26,24 +26,25 @@ int main()
 	//je to velmi rychle
 
 	//otevreni slozky
-	p_lobjEncryption->OpenFile("C:\\temp\\test.txt", "C:\\temp\\testcrypt.txt");		//Change to scanf!!!
+	p_objProtoEncryption->OpenFile("C:\\temp\\test.txt", "C:\\temp\\testcrypt.txt");		//Change to scanf!!!
 
 	//zasifrovat
-	p_lobjEncryption->Crypt();
+	p_objProtoEncryption->Crypt();
 
 	//zavreni slozky
-	p_lobjEncryption->CloseFile();
+	p_objProtoEncryption->CloseFile();
 
 	//otevreni slozky
-	p_lobjEncryption->OpenFile("C:\\temp\\testcrypt.txt", "C:\\temp\\testdecrypt.txt");		//Change to scanf!!!
+	p_objProtoEncryption->OpenFile("C:\\temp\\testcrypt.txt", "C:\\temp\\testdecrypt.txt");		//Change to scanf!!!
 
 	//zasifrovat
-	p_lobjEncryption->Decrypt();
+	p_objProtoEncryption->Decrypt();
 
 	//zavreni slozky
-	p_lobjEncryption->CloseFile();
+	p_objProtoEncryption->CloseFile();
 
 	//uvolneni pameti
 	delete(p_lobjEncryption);
+	delete(p_objProtoEncryption);
 }
 
