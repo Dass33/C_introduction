@@ -26,7 +26,7 @@ bool clsEncryptionEx::OpenFile(const char* p_chNameIN, const char* p_chNameOUT)
 bool clsEncryptionEx::CloseFile()
 {
     // Check if the file handle is valid
-    if (m_hFile = INVALID_HANDLE_VALUE)
+    if (m_hFile == INVALID_HANDLE_VALUE)
     {
         return false;
     }
