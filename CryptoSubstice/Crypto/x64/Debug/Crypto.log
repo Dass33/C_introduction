@@ -1,0 +1,7 @@
+﻿  Crypto.cpp
+  clsEncryptionEx.cpp
+C:\Users\ddant\Downloads\CryptoPripraveno\Crypto\clsEncryptionEx.cpp(84,49): warning C4244: 'argument': conversion from 'LONGLONG' to 'DWORD', possible loss of data
+C:\Users\ddant\Downloads\CryptoPripraveno\Crypto\clsEncryptionEx.cpp(98,48): warning C4244: 'argument': conversion from 'LONGLONG' to 'DWORD', possible loss of data
+C:\Users\ddant\Downloads\CryptoPripraveno\Crypto\clsEncryptionEx.cpp(114,49): warning C4244: 'argument': conversion from 'LONGLONG' to 'DWORD', possible loss of data
+  Generating Code...
+  Crypto.vcxproj -> C:\Users\ddant\Downloads\CryptoPripraveno\x64\Debug\Crypto.exe
