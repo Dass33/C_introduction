@@ -23,6 +23,8 @@ int main()
 	//otevreni slozky
 	p_lobjEncryptionEx->OpenFile(L"C:\\temp\\test.txt");		
 
+	//zamichani
+	p_lobjEncryptionEx->Shuffle();
 
 	//zasifrovat
 	p_lobjEncryptionEx->Crypt();
@@ -30,6 +32,9 @@ int main()
 	//odsifrovani
 	p_lobjEncryptionEx->Decrypt();
 
+	//zamichani
+	p_lobjEncryptionEx->Shuffle();
+	
 	//zavreni slozky
 	p_lobjEncryptionEx->CloseFile();
 

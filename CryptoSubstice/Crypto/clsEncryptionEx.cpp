@@ -2,7 +2,7 @@
 
 clsEncryptionEx:: clsEncryptionEx()
 {
-	key = { 0x21, 0x50, 0x03, 0x55, 0x50, 0x03, 0x04, 0x55, 0x03, 0x04, 0x55 };
+	key = { 0x21, 0x50, 0x03, 0x55, 0x50, 0x03, 0x04, 0x55, 0x03, 0x04, 0x55, 0xff, 0xe0, 0x45, 5, 1, 74, 121, 'a'};
 }
 bool clsEncryptionEx::OpenFile(LPCWSTR p_chNameIN)
 {
@@ -117,17 +117,23 @@ void clsEncryptionEx::Reverse()
 
 void clsEncryptionEx::Shuffle()
 {
+	// Move the file pointer to the beginning of the file
+	SetFilePointer(hFile, 0, NULL, FILE_BEGIN);
+
+
 	GetFileSizeEx(hFile, &lpFileSize);
 	int iTmpVal;
-	int iHalfLength = lpFileSize.QuadPart / 2;
+	int iQuarterLength = lpFileSize.QuadPart / 4;
 
-	for (int i = 0; i <iHalfLength ; i++)
+	for (int i = 0; i <iQuarterLength ; i++)
 	{
-		iTmpVal = p_mSourceFirstByte[iHalfLength + i];
-		p_mSourceFirstByte[i + iHalfLength] = p_mSourceFirstByte[i];
+		iTmpVal = p_mSourceFirstByte[iQuarterLength * 2 + i];
+		p_mSourceFirstByte[i + iQuarterLength * 2] = p_mSourceFirstByte[i];
 		p_mSourceFirstByte[i] = iTmpVal;
 	}
 	DWORD dwBytesWritten;
 	WriteFile(hFile, p_mSourceFirstByte, lpFileSize.QuadPart, &dwBytesWritten, NULL);
 
+	// Move the file pointer to the beginning of the file
+	SetFilePointer(hFile, 0, NULL, FILE_BEGIN);
 }
