@@ -17,6 +17,7 @@ public:
 	virtual bool Crypt(); //kryptovani slozek
 	virtual bool Decrypt(); //kryptovani slozek
 	virtual void Reverse(); //poradne to zamycha
+	virtual void Shuffle(); //poradne to zamycha
 
 private:
 	HANDLE hFile, hFileMapping;
