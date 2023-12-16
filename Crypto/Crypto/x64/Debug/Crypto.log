@@ -1,0 +1,6 @@
+﻿  Crypto.cpp
+C:\Users\ddant\source\repos\AllocMoore\Crypto\Crypto\Crypto.cpp(32,14): warning C4477: 'scanf_s' : format string '%99s' requires an argument of type 'unsigned int', but variadic argument 2 has type 'size_t'
+C:\Users\ddant\source\repos\AllocMoore\Crypto\Crypto\Crypto.cpp(32,14): message : this argument is used as a buffer size
+C:\Users\ddant\source\repos\AllocMoore\Crypto\Crypto\Crypto.cpp(39,14): warning C4477: 'scanf_s' : format string '%99s' requires an argument of type 'unsigned int', but variadic argument 2 has type 'size_t'
+C:\Users\ddant\source\repos\AllocMoore\Crypto\Crypto\Crypto.cpp(39,14): message : this argument is used as a buffer size
+  Crypto.vcxproj -> C:\Users\ddant\source\repos\AllocMoore\Crypto\x64\Debug\Crypto.exe

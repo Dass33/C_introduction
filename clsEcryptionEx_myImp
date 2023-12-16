@@ -1,0 +1,56 @@
+#include "clsEncryptionEx.h"
+
+clsEncryptionEx::clsEncryptionEx()
+{
+
+}
+
+bool clsEncryptionEx::OpenFile(const char* p_chNameIN, const char* p_chNameOUT)
+{
+
+    hFile = CreateFileA(p_chNameIN, GENERIC_WRITE | GENERIC_READ,
+        0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
+
+    // Check if the file was opened successfully
+    if (hFile == INVALID_HANDLE_VALUE)
+    {
+        return false;
+    }
+
+    // Save the file handle for later use
+    m_hFile = hFile;
+
+    return true;
+}
+
+bool clsEncryptionEx::CloseFile()
+{
+    // Check if the file handle is valid
+    if (m_hFile == INVALID_HANDLE_VALUE)
+    {
+        return false;
+    }
+    
+    // Close the file handle
+    if (CloseHandle(m_hFile))
+    {
+        // Reset the file handle to an invalid value
+        m_hFile = INVALID_HANDLE_VALUE;
+        return true;
+    }
+    else
+    {
+        // Handle the error
+        return false;
+    }
+}
+
+bool clsEncryptionEx::Crypt()
+{
+    return false;
+}
+
+bool clsEncryptionEx::Decrypt()
+{
+    return false;
+}

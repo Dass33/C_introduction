@@ -1,0 +1,10 @@
+﻿  clsEncryption.cpp
+\\GRSERVER\StudentiC_downloads\dvorakdaniel\Downloads\Crypto\Crypto\clsEncryption.cpp(21,21): warning C4267: =: Převod z: size_t na: int, může dojít ke ztrátě dat.
+\\GRSERVER\StudentiC_downloads\dvorakdaniel\Downloads\Crypto\Crypto\clsEncryption.cpp(30,21): warning C4267: =: Převod z: size_t na: int, může dojít ke ztrátě dat.
+\\GRSERVER\StudentiC_downloads\dvorakdaniel\Downloads\Crypto\Crypto\clsEncryption.cpp(88,22): warning C4267: =: Převod z: size_t na: int, může dojít ke ztrátě dat.
+\\GRSERVER\StudentiC_downloads\dvorakdaniel\Downloads\Crypto\Crypto\clsEncryption.cpp(77,6): warning C4101: number_In_Alphabet: neodkazovaná lokální proměnná
+\\GRSERVER\StudentiC_downloads\dvorakdaniel\Downloads\Crypto\Crypto\clsEncryption.cpp(126,22): warning C4267: =: Převod z: size_t na: int, může dojít ke ztrátě dat.
+  clsEncryptionEx.cpp
+  Crypto.cpp
+  Generování kódu...
+  Crypto.vcxproj -> \\GRSERVER\StudentiC_downloads\dvorakdaniel\Downloads\Crypto\x64\Debug\Crypto.exe
