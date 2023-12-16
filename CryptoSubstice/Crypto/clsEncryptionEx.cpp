@@ -114,3 +114,20 @@ void clsEncryptionEx::Reverse()
 {
 	std::reverse(p_mSourceFirstByte, p_mSourceFirstByte + lpFileSize.QuadPart);
 }
+
+void clsEncryptionEx::Shuffle()
+{
+	GetFileSizeEx(hFile, &lpFileSize);
+	int iTmpVal;
+	int iHalfLength = lpFileSize.QuadPart / 2;
+
+	for (int i = 0; i <iHalfLength ; i++)
+	{
+		iTmpVal = p_mSourceFirstByte[iHalfLength + i];
+		p_mSourceFirstByte[i + iHalfLength] = p_mSourceFirstByte[i];
+		p_mSourceFirstByte[i] = iTmpVal;
+	}
+	DWORD dwBytesWritten;
+	WriteFile(hFile, p_mSourceFirstByte, lpFileSize.QuadPart, &dwBytesWritten, NULL);
+
+}
