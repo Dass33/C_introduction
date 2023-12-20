@@ -24,8 +24,9 @@ private:
 	//handle je manipulacni cislo
 	//predame jadru cislo handlu ten si najde misto v pameti 
 	//kazdy proces ma sve vlsatni handles
-	PBYTE p_mSourceFirstByte;
-	LARGE_INTEGER lpFileSize;
-	std::vector<BYTE> key;
+
+	PBYTE p_mSourceFirstByte; //pointer na byte
+	LARGE_INTEGER lpFileSize; // k ukladani velkych cisel
+	std::vector<BYTE> key; //neco jako dynamicka array typu byte
 };
 

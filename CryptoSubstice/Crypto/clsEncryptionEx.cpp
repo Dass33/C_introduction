@@ -2,11 +2,12 @@
 
 clsEncryptionEx:: clsEncryptionEx()
 {
+	// encryption key, all values are intigers
 	key = { 0x21, 0x50, 0x03, 0x55, 0x50, 0x03, 0x04, 0x55, 0x03, 0x04, 0x55, 0xff, 0xe0, 0x45, 5, 1, 74, 121, 'a'};
 }
 bool clsEncryptionEx::OpenFile(LPCWSTR p_chNameIN)
 {
-	// otevreni souboru
+	// otevreni souboru, pomoci windows api
 	hFile = CreateFile(p_chNameIN, GENERIC_WRITE | GENERIC_READ,
 		0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
 	
@@ -20,6 +21,7 @@ bool clsEncryptionEx::OpenFile(LPCWSTR p_chNameIN)
 	hFileMapping = CreateFileMapping(hFile, NULL, PAGE_READWRITE, 0, 100, NULL);
 	//pouziva se proto abychom mohli pracovat se soubory vetsi nez je nase operacni pamet
 	//namapujeme vzdy jen cast souboru
+	//zaroven urcujeme take minimalni dleku souboru, doplneni mezerami
 	
 	if (hFileMapping == NULL)
 	{
